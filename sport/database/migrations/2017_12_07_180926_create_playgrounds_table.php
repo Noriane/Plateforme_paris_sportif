@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class User extends Migration
+class CreatePlaygroundsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('playground', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('groupe');
+            $table->string('playground_name');
+            $table->integer('country');
+            $table->string('playground_picture')->nullable();
+            $table->integer('nb_supporter_max')->default("40000");
+
             $table->rememberToken();
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('playground');
     }
 }

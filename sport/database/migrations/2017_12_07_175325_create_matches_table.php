@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Team extends Migration
+class CreateMatchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class Team extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('match', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('team_name')->unique();
-            $table->integer('nb_players');
-            $table->integer('nb_matches');
-            $table->string('coach_name')->nullable();
-            $table->string('nationality');
-            $table->string('team_logo')->nullable();
-
+            $table->integer('team_1');
+            $table->integer('team_2');
+            $table->integer('winner');
+            $table->integer('looser');
+            $table->integer('score_win');
+            $table->integer('score_loose');
+            $table->datetime('match_date');
+            $table->integer('playground');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,6 +35,6 @@ class Team extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('match');
     }
 }
