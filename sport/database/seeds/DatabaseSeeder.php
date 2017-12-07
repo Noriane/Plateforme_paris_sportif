@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +14,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+    	for ($i = 0; $i<5; $i++)
+    	{
+    		$faker = Faker::create();
+	        DB::table('players')->insert([
+	            'player_name' => $faker->name,
+	            'birthdate' => Carbon::create('1985', '12', '01'),
+	            'height' => rand(160, 250)/100,
+	            'weight' => $faker->numberBetween(55,100),
+	            'team_id' => $faker->numberBetween(1,5),
+	        ]);
+
+	        DB::table('teams')->insert([
+	            'team_name' => str_random(10),
+	            'nb_players' => $faker->numberBetween(1,20),
+	            'nb_matches' => $faker->numberBetween(1,10),
+	            'coach_name' => $faker->name,
+	            'nationality' => $faker->country,
+	            //'email' => str_random(10).'@gmail.com',
+	            //'password' => bcrypt('secret'),
+	        ]);
+    	}
     }
 }

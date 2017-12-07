@@ -19,7 +19,7 @@ class CreatePlayersTable extends Migration
             $table->datetime('birthdate');
             $table->float('height');
             $table->float('weight');
-            $table->integer('team_id');
+            $table->integer('team_id')->nullable();
             $table->string('player_picture')->nullable();
             
             $table->rememberToken();

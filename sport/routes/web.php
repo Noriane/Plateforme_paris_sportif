@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::name('language')->get('language/{lang}', 'HomeController@language');
+
+Route::get('players', 'PlayerController@index')->name('players');
