@@ -30,8 +30,8 @@ CREATE TABLE `Team` (
 CREATE TABLE IF NOT EXISTS `Match`;
 CREATE TABLE `Match` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`team_1` INT NOT NULL AUTO_INCREMENT,
-	`team_2` INT NOT NULL AUTO_INCREMENT,
+	`team_1` INT NOT NULL,
+	`team_2` INT NOT NULL,
 	`winner` INT NOT NULL,
 	`looser` INT NOT NULL,
 	`score_win` INT NOT NULL,
@@ -51,7 +51,6 @@ CREATE TABLE `Player` (
 	`height` FLOAT NOT NULL,
 	`weight` FLOAT NOT NULL,
 	`team_id` INT NOT NULL,
-	`weight` FLOAT NOT NULL,
 	`player_picture` varchar(255),
 	`created_at` TIMESTAMP NOT NULL,
 	`updated_at` TIMESTAMP NOT NULL,
