@@ -101,6 +101,10 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
             'Collective\\Html\\' => 16,
             'Carbon\\' => 7,
         ),
+        'B' => 
+        array (
+            'Bestmomo\\ArtisanLanguage\\' => 25,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -266,6 +270,10 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Bestmomo\\ArtisanLanguage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -319,8 +327,10 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\Locale' => __DIR__ . '/../..' . '/app/Http/Middleware/Locale.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
@@ -333,6 +343,12 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'Bestmomo\\ArtisanLanguage\\ArtisanLanguageProvider' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/ArtisanLanguageProvider.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageBase' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageBase.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageDiff' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageDiff.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageMake' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageMake.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageStrings' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageStrings.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageSync' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageSync.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',

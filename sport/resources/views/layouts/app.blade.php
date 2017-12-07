@@ -67,9 +67,30 @@
                             </li>
                         @endguest
                     </ul>
+
+                    <!-- Language -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdownFlag" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img width="32" height="32" alt="{{ session('locale') }}"  src="{!! asset('images/flags/' . session('locale') . '-flag.png') !!}" />
+                            </a>
+                            <div id="flags" class="dropdown-menu" aria-labelledby="navbarDropdownFlag">
+                                @foreach(config('app.locales') as $locale)
+
+                                    @if($locale != session('locale'))
+                                        <a class="dropdown-item" href="{{ route('language', $locale) }}">
+                                            <img width="32" height="32" alt="{{ session('locale') }}"  src="{!! asset('images/flags/' . $locale . '-flag.png') !!}" />
+                                        </a>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- End Language -->
                 </div>
             </div>
         </nav>
+        <h1>Bonjour à tous</h1>
 
         @yield('content')
     </div>
