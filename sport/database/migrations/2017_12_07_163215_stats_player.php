@@ -23,7 +23,8 @@ class StatsPlayer extends Migration
             $table->integer('nb_rebounds');
             $table->integer('nb_assists');
             $table->integer('ban')->default(0);
-
+            $table->float('game_time');
+            $table->float('no_game_time');
 
             $table->rememberToken();
             $table->timestamps();
@@ -37,6 +38,6 @@ class StatsPlayer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('country');
+        Schema::dropIfExists('stats_player');
     }
 }

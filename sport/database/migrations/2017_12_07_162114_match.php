@@ -22,7 +22,7 @@ class Match extends Migration
             $table->integer('score_win');
             $table->integer('score_loose');
             $table->datetime('match_date');
-            $table->interger('playground');
+            $table->integer('playground');
             $table->rememberToken();
             $table->timestamps();
         });
