@@ -50,11 +50,18 @@
     		<img src="{{$player->player_picture}}">
     	</div>
     	<h3>{{$player->player_name}}</h3>
-    	<p>{{$player->height}} m</p>
-    	<p>{{$player->weight}} kg</p>
-    	<p>{{$player->team->team_name}}</p>
-    	<p>{{$player->birthdate}}</p>
-    	<p>{{$player->stats->nb_match}}</p>
+    	<p>Taille : {{$player->height}} m</p>
+    	<p>Poids : {{$player->weight}} kg</p>
+    	<p>Equipe : {{$player->team->team_name}}</p>
+    	<p>Date de naissance : {{$player->birthdate}}</p>
+    	<p>Nombre de match joué : {{$player->stats->nb_match}}</p>
+    	<p>Nombre de points marqués : {{$player->stats->nb_points}}</p>
+    	<p>Nombre de rebonds : {{$player->stats->nb_rebounds}}</p>
+    	<p>Nombre de fautes : {{$player->stats->nb_faults}}</p>
+    	<p>Nombre de passes : {{$player->stats->nb_assists}}</p>
+    	<p>Expulsion : {{$player->stats->ban}}</p>
+    	<p>Temps de jeu : {{$player->stats->game_time}}</p>
+    	<p>Temps de non-jeu: {{$player->stats->no_game_time}}</p>
     	
     </div>
 
