@@ -45,6 +45,7 @@ return array(
     'Cron\\' => array($vendorDir . '/mtdowling/cron-expression/src/Cron'),
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'Bezhanov\\Faker\\' => array($vendorDir . '/mbezhanov/faker-provider-collection/src/Faker'),
     'Bestmomo\\ArtisanLanguage\\' => array($vendorDir . '/bestmomo/laravel5-artisan-language/src'),
     'App\\' => array($baseDir . '/app'),
 );

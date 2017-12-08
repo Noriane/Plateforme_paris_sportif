@@ -1,0 +1,15 @@
+.main-content
+{
+	display:flex;
+	.table-responsive
+	{
+		td.picture
+		{
+			padding:0;
+			img
+			{
+				width:60px;
+			}
+		}
+	}
+}

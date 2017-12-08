@@ -103,6 +103,7 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         ),
         'B' => 
         array (
+            'Bezhanov\\Faker\\' => 15,
             'Bestmomo\\ArtisanLanguage\\' => 25,
         ),
         'A' => 
@@ -270,6 +271,10 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Bezhanov\\Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker',
+        ),
         'Bestmomo\\ArtisanLanguage\\' => 
         array (
             0 => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src',
@@ -359,6 +364,14 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         'Bestmomo\\ArtisanLanguage\\Commands\\LanguageMake' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageMake.php',
         'Bestmomo\\ArtisanLanguage\\Commands\\LanguageStrings' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageStrings.php',
         'Bestmomo\\ArtisanLanguage\\Commands\\LanguageSync' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageSync.php',
+        'Bezhanov\\Faker\\ProviderCollectionHelper' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/ProviderCollectionHelper.php',
+        'Bezhanov\\Faker\\Provider\\Avatar' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Avatar.php',
+        'Bezhanov\\Faker\\Provider\\Commerce' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Commerce.php',
+        'Bezhanov\\Faker\\Provider\\Demographic' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Demographic.php',
+        'Bezhanov\\Faker\\Provider\\Educator' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Educator.php',
+        'Bezhanov\\Faker\\Provider\\Food' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Food.php',
+        'Bezhanov\\Faker\\Provider\\Placeholder' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Placeholder.php',
+        'Bezhanov\\Faker\\Provider\\Team' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Team.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',

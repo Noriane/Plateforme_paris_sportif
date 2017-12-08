@@ -1,101 +1,73 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Styles -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app" class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
                             </li>
-                        @endguest
-                    </ul>
-
-                    <!-- Language -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownFlag" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img width="32" height="32" alt="{{ session('locale') }}"  src="{!! asset('images/flags/' . session('locale') . '-flag.png') !!}" />
-                            </a>
-                            <div id="flags" class="dropdown-menu" aria-labelledby="navbarDropdownFlag">
-                                @foreach(config('app.locales') as $locale)
-
-                                    @if($locale != session('locale'))
-                                        <a class="dropdown-item" href="{{ route('language', $locale) }}">
-                                            <img width="32" height="32" alt="{{ session('locale') }}"  src="{!! asset('images/flags/' . $locale . '-flag.png') !!}" />
-                                        </a>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- End Language -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Reports</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Analytics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Export</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nav item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nav item again</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">One more nav</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Another nav item</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nav item again</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">One more nav</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Another nav item</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+                        <h1>Players</h1>
+                        <div class="table-responsive">
+                            @yield('content')
+                        </div>
+                    </main>
                 </div>
             </div>
-        </nav>
-        <h1>Bonjour à tous</h1>
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
+            {{--@include('includes/header')
+            --}}
+        </div>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
+    </body>
 </html>

@@ -17,16 +17,20 @@ class DatabaseSeeder extends Seeder
     	for ($i = 0; $i<5; $i++)
     	{
     		$faker = Faker::create();
+			$faker->addProvider(new \Bezhanov\Faker\Provider\Avatar($faker));
+			$faker->addProvider(new \Bezhanov\Faker\Provider\Team($faker));
+
 	        DB::table('players')->insert([
 	            'player_name' => $faker->name,
 	            'birthdate' => Carbon::create('1985', '12', '01'),
 	            'height' => rand(160, 250)/100,
 	            'weight' => $faker->numberBetween(55,100),
 	            'team_id' => $faker->numberBetween(1,5),
+	            'player_picture' => $faker->avatar,
 	        ]);
 
 	        DB::table('teams')->insert([
-	            'team_name' => str_random(10),
+	            'team_name' => $faker->team,
 	            'nb_players' => $faker->numberBetween(1,20),
 	            'nb_matches' => $faker->numberBetween(1,10),
 	            'coach_name' => $faker->name,
