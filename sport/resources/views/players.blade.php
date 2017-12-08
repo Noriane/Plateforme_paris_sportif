@@ -42,3 +42,20 @@
     </table>
 
 @endsection
+
+@section('profile')
+
+    <div>
+    	<div class="picture">
+    		<img src="{{$player->player_picture}}">
+    	</div>
+    	<h3>{{$player->player_name}}</h3>
+    	<p>{{$player->height}} m</p>
+    	<p>{{$player->weight}} kg</p>
+    	<p>{{$player->team->team_name}}</p>
+    	<p>{{$player->birthdate}}</p>
+    	<p>{{$player->stats->nb_match}}</p>
+    	
+    </div>
+
+@endsection

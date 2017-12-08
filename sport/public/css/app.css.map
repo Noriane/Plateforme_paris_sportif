@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEQ,0EAAkE;ACF1E,aACA;EACC,OAAO,EAAC,IAAI;EAGX,0CACA;IACC,OAAO,EAAC,CAAC;IACT,8CACA;MACC,KAAK,EAAC,IAAI",
+"mappings": "AAEQ,0EAAkE;ACF1E,aACA;EACC,OAAO,EAAC,IAAI;EAGX,0CACA;IACC,OAAO,EAAC,CAAC;IACT,8CACA;MACC,KAAK,EAAC,IAAI;;AAKd,WACA;EACC,MAAM,EAAC,cAAc;EACrB,IAAI,EAAC,CAAC",
 "sources": ["../../resources/assets/sass/app.scss","../../resources/assets/sass/_dashboard.scss"],
 "names": [],
 "file": "app.css"

@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	for ($i = 0; $i<5; $i++)
+    	for ($i = 0; $i<1; $i++)
     	{
     		$faker = Faker::create();
 			$faker->addProvider(new \Bezhanov\Faker\Provider\Avatar($faker));
@@ -37,6 +37,36 @@ class DatabaseSeeder extends Seeder
 	            'nationality' => $faker->country,
 	            //'email' => str_random(10).'@gmail.com',
 	            //'password' => bcrypt('secret'),
+	        ]);
+
+	        DB::table('matchs')->insert([
+	            'team_1' => 1,
+	            'team_2' => 2,
+	            'winner' => 1,
+	            'looser' => 2,
+	            'score_win' => rand(50, 102),
+	            'score_loose' => rand(0, 49),
+	            'match_date' => Carbon::create('2017', '12', '01'),
+	            'playground' => 1,
+	        ]);
+
+	        DB::table('playgrounds')->insert([
+	            'playground_name' => $faker->name,
+	            'country' => $faker->numberBetween(1,10),
+	            'playground_picture' => $faker->avatar,
+	            'nb_supporter_max' => rand(40000, 80000),
+	        ]);
+
+	        DB::table('stats_players')->insert([
+	            'id_player' => $faker->numberBetween(1,10),
+	            'id_match' => $faker->numberBetween(1,10),
+	            'nb_match' => $faker->numberBetween(0,10),
+	            'nb_points' => $faker->numberBetween(0,102),
+	            'nb_faults' => $faker->numberBetween(0,6),
+	            'nb_rebounds' => $faker->numberBetween(0,25),
+	            'nb_assists' => $faker->numberBetween(0,30),
+	            'game_time' => $faker->numberBetween(0,2880),
+	            'no_game_time' => $faker->numberBetween(0,2880),
 	        ]);
     	}
     }

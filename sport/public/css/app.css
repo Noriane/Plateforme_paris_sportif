@@ -6,4 +6,8 @@
     .main-content .table-responsive td.picture img {
       width: 60px; }
 
+.infos-list {
+  border: 2px solid blue;
+  flex: 1; }
+
 /*# sourceMappingURL=app.css.map */

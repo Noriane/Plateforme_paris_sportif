@@ -56,12 +56,15 @@
                             </li>
                         </ul>
                     </nav>
-                    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+                    <main role="main-list" class="col-md-4 pt-3">
                         <h1>Players</h1>
                         <div class="table-responsive">
                             @yield('content')
                         </div>
                     </main>
+                    <div class="infos-list">
+                        @yield('profile')
+                    </div>
                 </div>
             </div>
             {{--@include('includes/header')
