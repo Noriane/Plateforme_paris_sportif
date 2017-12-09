@@ -26,9 +26,11 @@ class PlayerController extends Controller
     {
 		$players = Player::with("team")->with("stats")->get();
 		//$players = Player::with("team")->get();
+		/*
 		echo "<pre>";
 		var_dump($players);
 		echo "</pre>";
+		*/
         return view('players', ['players'=>$players]);
     }
 }

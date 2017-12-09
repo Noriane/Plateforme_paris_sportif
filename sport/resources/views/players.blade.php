@@ -46,6 +46,7 @@
 @section('profile')
 
     <div>
+
     	<div class="picture">
     		<img src="{{$player->player_picture}}">
     	</div>
