@@ -16,7 +16,7 @@ class RenameTables extends Migration
         Schema::rename("player", "players");
         Schema::rename("match", "matchs");
         Schema::rename("team", "teams");
-        Schema::rename("country", "countrys");
+        Schema::rename("country", "countries");
         Schema::rename("playground", "playgrounds");
         Schema::rename("stats_player", "stats_players");
         Schema::rename("stats_team", "stats_teams");
@@ -34,7 +34,7 @@ class RenameTables extends Migration
         Schema::rename("players", "player");
         Schema::rename("matchs", "match");
         Schema::rename("teams", "team");
-        Schema::rename("countrys", "country");
+        Schema::rename("countries", "country");
         Schema::rename("playgrounds", "playground");
         Schema::rename("stats_players", "stats_player");
         Schema::rename("stats_teams", "stats_team");

@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
+use App\Player;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	for ($i = 0; $i<1; $i++)
+    	for ($i = 0; $i<5; $i++)
     	{
     		$faker = Faker::create();
 			$faker->addProvider(new \Bezhanov\Faker\Provider\Avatar($faker));
@@ -29,15 +30,17 @@ class DatabaseSeeder extends Seeder
 	            'player_picture' => $faker->avatar,
 	        ]);
 
+
 	        DB::table('teams')->insert([
 	            'team_name' => $faker->team,
 	            'nb_players' => $faker->numberBetween(1,20),
 	            'nb_matches' => $faker->numberBetween(1,10),
 	            'coach_name' => $faker->name,
-	            'nationality' => $faker->country,
+	            'country_id' => $faker->numberBetween(1,250),
 	            //'email' => str_random(10).'@gmail.com',
 	            //'password' => bcrypt('secret'),
 	        ]);
+
 
 	        DB::table('matchs')->insert([
 	            'team_1' => 1,
@@ -57,8 +60,14 @@ class DatabaseSeeder extends Seeder
 	            'nb_supporter_max' => rand(40000, 80000),
 	        ]);
 
+    	}
+
+    	$players = Player::all();
+		DB::table('stats_players')->truncate();
+    	foreach ($players as $player)
+    	{
 	        DB::table('stats_players')->insert([
-	            'id_player' => $faker->numberBetween(1,10),
+	            'id_player' => $player->id,
 	            'id_match' => $faker->numberBetween(1,10),
 	            'nb_match' => $faker->numberBetween(0,10),
 	            'nb_points' => $faker->numberBetween(0,102),

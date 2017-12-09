@@ -1,13 +1,49 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 .main-content {
   display: flex; }
+  .main-content .table-responsive td {
+    border-top: 0px solid #e9ecef; }
   .main-content .table-responsive td.picture {
     padding: 0; }
+    .main-content .table-responsive td.picture:first-of-type {
+      background-color: white; }
     .main-content .table-responsive td.picture img {
+      height: 60px;
       width: 60px; }
+    .main-content .table-responsive td.picture.flag img {
+      width: 40px;
+      height: 20px; }
+  .main-content .table-responsive tr {
+    display: flex;
+    align-items: center;
+    cursor: pinter; }
+    .main-content .table-responsive tr.active {
+      background-color: #27282e;
+      color: white; }
+      .main-content .table-responsive tr.active a {
+        color: white; }
+    .main-content .table-responsive tr td.name {
+      width: 190px; }
+    .main-content .table-responsive tr td.team {
+      flex: 1; }
 
 .infos-list {
-  border: 2px solid blue;
-  flex: 1; }
+  border-left: 1px solid #ededed;
+  box-shadow: 2px 0px 8px #e9e9e9 inset;
+  flex: 1;
+  padding: 15px; }
+  .infos-list div.picture {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f2f2f2; }
+    .infos-list div.picture > img {
+      width: 50%; }
+      .infos-list div.picture > img.logo {
+        background-color: #27282e; }
+      .infos-list div.picture > img.profile {
+        padding: 0 2%;
+        box-sizing: content-box;
+        margin-top: auto; }
 
 /*# sourceMappingURL=app.css.map */

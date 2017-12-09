@@ -30,3 +30,4 @@ Route::get('/', 'AdminController@index')->name('admin.dashboard');
 Route::name('language')->get('language/{lang}', 'HomeController@language');
 
 Route::get('players', 'PlayerController@index')->name('players');
+Route::get('players/{id}', 'PlayerController@index')->name('player_stats');

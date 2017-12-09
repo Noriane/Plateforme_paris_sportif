@@ -22,15 +22,17 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = NULL)
     {
-		$players = Player::with("team")->with("stats")->get();
-		//$players = Player::with("team")->get();
-		/*
-		echo "<pre>";
-		var_dump($players);
-		echo "</pre>";
-		*/
-        return view('players', ['players'=>$players]);
+		$players = Player::with("team.country")->with("stats")->get();
+		if (isset($id))
+		{
+			$current_player = Player::with("team.country")->with("stats")->find($id);
+		}else
+		{
+			$current_player = $players->first();
+		}
+
+        return view('players', ['players'=>$players, 'current_player'=>$current_player]);
     }
 }

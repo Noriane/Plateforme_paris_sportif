@@ -10,4 +10,8 @@ class Team extends Model
 	{
 	    return $this->hasMany('App\Player');
 	}
+	public function country()
+	{
+	    return $this->belongsTo('App\Country');
+	}
 }

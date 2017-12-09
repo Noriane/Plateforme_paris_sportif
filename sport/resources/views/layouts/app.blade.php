@@ -57,10 +57,7 @@
                         </ul>
                     </nav>
                     <main role="main-list" class="col-md-4 pt-3">
-                        <h1>Players</h1>
-                        <div class="table-responsive">
-                            @yield('content')
-                        </div>
+                        @yield('content')
                     </main>
                     <div class="infos-list">
                         @yield('profile')
