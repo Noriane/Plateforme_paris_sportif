@@ -31,3 +31,6 @@ Route::name('language')->get('language/{lang}', 'HomeController@language');
 
 Route::get('players', 'PlayerController@index')->name('players');
 Route::get('players/{id}', 'PlayerController@index')->name('player_stats');
+
+Route::get('teams', 'TeamController@index')->name('teams');
+Route::get('teams/{id}', 'TeamController@index')->name('team_stats');

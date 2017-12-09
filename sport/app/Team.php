@@ -14,4 +14,8 @@ class Team extends Model
 	{
 	    return $this->belongsTo('App\Country');
 	}
+	public function stats()
+	{
+	    return $this->hasOne('App\Stats_team', 'id_team');
+	}
 }
