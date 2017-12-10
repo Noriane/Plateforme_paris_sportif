@@ -12,9 +12,13 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div id="app" class="main-content">
+        <div id="app" class="main-content {{Request::is('match')? 'match' : ''}}">
             <div class="container-fluid">
-                <div class="row {{Request::is('match')? 'large' : ''}}">
+                @if (in_array(Request::route()->getName(), ["match","match_stats"]))
+                <div class="row large">
+                @else
+                <div class="row">
+                @endif
                     <nav class="col-sm-2 col-md-1 d-none d-sm-block bg-dark sidebar">
                         <ul class="nav nav-pills flex-column">
                             <li class="nav-item">
@@ -34,7 +38,7 @@
                     <main role="main-list" class="col-md-4 pt-3">
                         @yield('content')
                     </main>
-                    @if ((Request::is('players')) || (Request::is('teams')))
+                    @if (in_array(Request::route()->getName(), ["players","teams","team_stats"]))
                     <div class="infos-list">
                         @yield('profile')
                     </div>

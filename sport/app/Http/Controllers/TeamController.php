@@ -32,6 +32,7 @@ class TeamController extends Controller
 		{
 			$current_team = $teams->first();
 		}
+        
         return view('teams', ['teams'=>$teams, 'current_team'=>$current_team]);
     }
 }

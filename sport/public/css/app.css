@@ -5,9 +5,14 @@
     flex: 1;
     max-width: inherit; }
 
+.flex {
+  display: flex; }
+
 .main-content {
   display: flex;
-  background-color: #efefef; }
+  background-color: white; }
+  .main-content.match {
+    background-color: #efefef; }
   .main-content nav .nav-item a {
     color: white; }
   .main-content main[role="main-list"] h1 {
@@ -18,25 +23,39 @@
     width: 67%;
     margin: 0 auto; }
     .main-content .table-responsive .list-match tr {
-      background-color: white;
-      margin: 4px; }
+      margin: 4px;
+      background-color: #efefef; }
+      .main-content .table-responsive .list-match tr[class^="win_"] {
+        background-color: white; }
       .main-content .table-responsive .list-match tr.win_team_1 .score.team_1 {
         font-weight: bold;
         font-size: 1.5em; }
       .main-content .table-responsive .list-match tr.win_team_2 .score.team_2 {
         font-weight: bold;
         font-size: 1.5em; }
+      .main-content .table-responsive .list-match tr .data {
+        flex: 1;
+        text-align: right; }
     .main-content .table-responsive .list-match img {
       width: 60px; }
     .main-content .table-responsive .list-match .team1-name {
       width: 335px;
       text-align: right; }
     .main-content .table-responsive .list-match .team2-name {
-      width: 335px;
       text-align: left; }
     .main-content .table-responsive .list-match .score {
       width: 60px;
       text-align: center; }
+    .main-content .table-responsive .list-match .stats {
+      flex: 1;
+      text-align: right; }
+    .main-content .table-responsive .list-match .separator {
+      margin-top: 30px;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      font-weight: bold; }
+    .main-content .table-responsive .list-match .date {
+      font-size: 0.8em; }
   .main-content .table-responsive td.picture {
     padding: 0; }
     .main-content .table-responsive td.picture:first-of-type {
@@ -63,6 +82,38 @@
     .main-content .table-responsive tr td.country {
       flex: 1;
       text-align: right; }
+  .main-content .table-responsive.stats_match {
+    background-color: #efefef; }
+    .main-content .table-responsive.stats_match table.list-match tr {
+      background-color: white; }
+    .main-content .table-responsive.stats_match div.flex {
+      background-color: #ffffff;
+      padding: 50px;
+      width: 66.4%;
+      margin: 30px auto;
+      min-width: 800px;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 2em; }
+      .main-content .table-responsive.stats_match div.flex .logo_team {
+        width: 40%; }
+        .main-content .table-responsive.stats_match div.flex .logo_team img {
+          display: block;
+          margin: 0 auto;
+          width: 50%; }
+      .main-content .table-responsive.stats_match div.flex.win_team_1 .team1 {
+        font-weight: bold;
+        font-size: 1.5em; }
+      .main-content .table-responsive.stats_match div.flex.win_team_2 .team2 {
+        font-weight: bold;
+        font-size: 1.5em; }
+    .main-content .table-responsive.stats_match .playground {
+      width: 67%;
+      margin: 0 auto; }
+      .main-content .table-responsive.stats_match .playground img {
+        width: 70%;
+        display: block;
+        margin: 20px auto; }
 
 .infos-list {
   border-left: 1px solid #ededed;
