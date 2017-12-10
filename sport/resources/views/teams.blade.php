@@ -24,11 +24,11 @@
 	    <tbody>
 	    	@foreach ($teams as $team)
             {{--<tr class="{{$current_team->id == $team->id ? 'active' : ''}}">--}}
-	    	<tr class="">
+	    	<tr class="{{$current_team->id == $team->id ? 'active' : ''}}">
 	    		<td class="picture"><img src="{{$team->team_logo}}"></td>
 	    		<td class="name"><a href="{{ route('team_stats', ['id'=>$team->id]) }}">{{$team->team_name}}</a></td>
 
-	    		<td>{{$team->country->country_name}}</td>
+	    		<td class="country">{{$team->country->country_name}}</td>
 	    		<td class="picture flag"><img src="{{$team->country->flag}}"></td>
 	    	</tr>
 	   		@endforeach
@@ -48,6 +48,8 @@
     	</div>
     	<h3>{{$current_team->team_name}}</h3>
 
+        <p>Coach : {{$current_team->coach_name}}</p>
+        <p>Nombre de joueurs : {{$current_team->nb_players}}</p>
         <p>Nombre de match gagnés : {{$current_team->stats->nb_win}}</p>
     	<p>Nombre de match perdus : {{$current_team->stats->nb_loose}}</p>
         <p>Nombre de match joué : {{$current_team->stats->nb_played_match}}</p>

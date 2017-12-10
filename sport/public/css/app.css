@@ -1,8 +1,42 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+.row.large {
+  min-height: 100vh; }
+  .row.large > main {
+    flex: 1;
+    max-width: inherit; }
+
 .main-content {
-  display: flex; }
+  display: flex;
+  background-color: #efefef; }
+  .main-content nav .nav-item a {
+    color: white; }
+  .main-content main[role="main-list"] h1 {
+    font-size: 1.3rem; }
   .main-content .table-responsive td {
     border-top: 0px solid #e9ecef; }
+  .main-content .table-responsive .list-match {
+    width: 67%;
+    margin: 0 auto; }
+    .main-content .table-responsive .list-match tr {
+      background-color: white;
+      margin: 4px; }
+      .main-content .table-responsive .list-match tr.win_team_1 .score.team_1 {
+        font-weight: bold;
+        font-size: 1.5em; }
+      .main-content .table-responsive .list-match tr.win_team_2 .score.team_2 {
+        font-weight: bold;
+        font-size: 1.5em; }
+    .main-content .table-responsive .list-match img {
+      width: 60px; }
+    .main-content .table-responsive .list-match .team1-name {
+      width: 335px;
+      text-align: right; }
+    .main-content .table-responsive .list-match .team2-name {
+      width: 335px;
+      text-align: left; }
+    .main-content .table-responsive .list-match .score {
+      width: 60px;
+      text-align: center; }
   .main-content .table-responsive td.picture {
     padding: 0; }
     .main-content .table-responsive td.picture:first-of-type {
@@ -26,6 +60,9 @@
       width: 190px; }
     .main-content .table-responsive tr td.team {
       flex: 1; }
+    .main-content .table-responsive tr td.country {
+      flex: 1;
+      text-align: right; }
 
 .infos-list {
   border-left: 1px solid #ededed;

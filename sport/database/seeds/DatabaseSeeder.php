@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
     	
     	for ($i = 0; $i<5; $i++)
     	{
+    		/*
 
+    		//Generate Players
 	        DB::table('players')->insert([
 	            'player_name' => $faker->name,
 	            'birthdate' => Carbon::create('1985', '12', '01'),
@@ -31,8 +33,8 @@ class DatabaseSeeder extends Seeder
 	            'team_id' => $faker->numberBetween(1,5),
 	            'player_picture' => $faker->avatar,
 	        ]);
-
-
+			
+			//Generate Teams
 	        DB::table('teams')->insert([
 	            'team_name' => $faker->team,
 	            'nb_players' => $faker->numberBetween(1,20),
@@ -42,25 +44,27 @@ class DatabaseSeeder extends Seeder
 	            //'email' => str_random(10).'@gmail.com',
 	            //'password' => bcrypt('secret'),
 	        ]);
+			*/
 
-
+	        //Generate Match
 	        DB::table('matchs')->insert([
-	            'team_1' => 1,
-	            'team_2' => 2,
-	            'winner' => 1,
-	            'looser' => 2,
-	            'score_win' => rand(50, 102),
-	            'score_loose' => rand(0, 49),
+	            'team_1' => rand(1, 5),
+	            'team_2' => rand(1, 5),
+	            'score_team_1' => rand(0, 102),
+	            'score_team_2' => rand(0, 102),
 	            'match_date' => Carbon::create('2017', '12', '01'),
 	            'playground' => 1,
 	        ]);
 
+	        /*
+	        //Generate Playground
 	        DB::table('playgrounds')->insert([
 	            'playground_name' => $faker->name,
 	            'country' => $faker->numberBetween(1,10),
 	            'playground_picture' => $faker->avatar,
 	            'nb_supporter_max' => rand(40000, 80000),
 	        ]);
+	        */
 
     	}
 

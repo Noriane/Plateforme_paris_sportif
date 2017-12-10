@@ -1,13 +1,84 @@
 $grey:#27282e;
+$grey_light:#efefef;
+
+.row.large 
+{
+	min-height:100vh;
+	>main 
+	{
+		flex:1;
+		max-width: inherit;
+	}
+}
 
 .main-content
 {
 	display:flex;
+	background-color:$grey_light;
+	nav
+	{
+		.nav-item a 
+		{
+			color:white;
+		}
+	}
+	main[role="main-list"] 
+	{
+		h1 
+		{
+			font-size: 1.3rem;
+		}
+	}
 	.table-responsive
 	{
 		td
 		{
 			border-top: 0px solid #e9ecef;
+		}
+		.list-match
+		{
+		    width: 67%;
+    		margin: 0 auto;
+			tr 
+			{
+				background-color: white;
+				margin:4px;
+				&.win_team_1
+				{
+					.score.team_1
+					{
+						font-weight:bold;
+						font-size:1.5em;
+					}
+				}
+				&.win_team_2
+				{
+					.score.team_2
+					{
+						font-weight:bold;
+						font-size:1.5em;
+					}
+				}
+			}
+			img 
+			{
+				width:60px;
+			}
+			.team1-name
+			{
+			    width: 335px;
+    			text-align: right;
+			}
+			.team2-name
+			{
+			    width: 335px;
+    			text-align: left;
+			}
+			.score
+			{
+				width:60px;
+				text-align: center;
+			}
 		}
 		td.picture
 		{
@@ -48,6 +119,11 @@ $grey:#27282e;
     		td.team
     		{
     			flex:1;
+    		}
+    		td.country
+    		{
+    			flex: 1;
+    			text-align: right;
     		}
 		}
 	}

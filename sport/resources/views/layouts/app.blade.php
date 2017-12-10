@@ -14,11 +14,14 @@
     <body>
         <div id="app" class="main-content">
             <div class="container-fluid">
-                <div class="row">
-                    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+                <div class="row {{Request::is('match')? 'large' : ''}}">
+                    <nav class="col-sm-2 col-md-1 d-none d-sm-block bg-dark sidebar">
                         <ul class="nav nav-pills flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="/players">Players <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/admin">Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/players">Players <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/teams">Teams</a>
@@ -31,9 +34,11 @@
                     <main role="main-list" class="col-md-4 pt-3">
                         @yield('content')
                     </main>
+                    @if ((Request::is('players')) || (Request::is('teams')))
                     <div class="infos-list">
                         @yield('profile')
                     </div>
+                    @endif
                 </div>
             </div>
             {{--@include('includes/header')
