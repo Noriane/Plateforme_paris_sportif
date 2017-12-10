@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Team;
+use Carbon\Carbon;
 
 class TeamController extends Controller
 {
@@ -27,12 +28,12 @@ class TeamController extends Controller
 		$teams = Team::with("stats")->with("country")->get();
 		if (isset($id))
 		{
-			$current_team = Team::with("stats")->with("country")->find($id);
+			$current_team = Team::with("stats")->with("country")->with("players")->find($id);
 		}else
 		{
 			$current_team = $teams->first();
 		}
-        
-        return view('teams', ['teams'=>$teams, 'current_team'=>$current_team]);
+       $now = Carbon::now();
+        return view('teams', ['teams'=>$teams, 'current_team'=>$current_team, 'date_now'=>$now]);
     }
 }

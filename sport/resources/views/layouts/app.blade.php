@@ -38,7 +38,7 @@
                     <main role="main-list" class="col-md-4 pt-3">
                         @yield('content')
                     </main>
-                    @if (in_array(Request::route()->getName(), ["players","teams","team_stats"]))
+                    @if (in_array(Request::route()->getName(), ["players","player_stats", "teams","team_stats"]))
                     <div class="infos-list">
                         @yield('profile')
                     </div>

@@ -36,7 +36,7 @@
                     <tr class="separator"><td colspan="8">Upcoming matches</td></tr>
                 @endif
                 <tr class="date">
-                    <td colspan="8" rowspan="" headers="">{{$match->match_date->format('g:ia \o\n l jS F Y')}}</td>
+                    <td colspan="8" rowspan="" headers="">{{$match->match_date->format('l jS \of F Y h:i:s A')}}</td>
                 </tr>
                 <!-- Matchs à venir -->
                 @if ($match->match_date->gt($date_now))
@@ -63,6 +63,7 @@
                         <td class="score team_2">{{$match->score_team_2}}</td>
                         <td><img src="{{$match->team2->team_logo}}"></td>
                         <td class="team2-name">{{$match->team2->team_name}}</td>
+                        <td class="stats"><a href="match/{{$match->id}}/addstats">Add stats</a></td>
                         <td class="stats"><a href="match/{{$match->id}}/stats">Stats</a></td>
                     </tr>
                 @endif

@@ -16,7 +16,11 @@
   .main-content nav .nav-item a {
     color: white; }
   .main-content main[role="main-list"] h1 {
-    font-size: 1.3rem; }
+    text-align: left;
+    margin: 22px 0;
+    border-bottom: 1px solid gainsboro;
+    padding: 0 10px 12px;
+    font-size: 1em; }
   .main-content .table-responsive td {
     border-top: 0px solid #e9ecef; }
   .main-content .table-responsive .list-match {
@@ -126,12 +130,31 @@
     justify-content: space-around;
     background-color: #f2f2f2; }
     .infos-list div.picture > img {
-      width: 50%; }
-      .infos-list div.picture > img.logo {
-        background-color: #27282e; }
+      width: 30%; }
+      .infos-list div.picture > img.smaller {
+        width: 24%; }
       .infos-list div.picture > img.profile {
         padding: 0 2%;
         box-sizing: content-box;
         margin-top: auto; }
+  .infos-list h3 {
+    text-align: center;
+    margin: 24px 0;
+    font-weight: 600; }
+  .infos-list .team-list {
+    display: flex;
+    flex-wrap: wrap; }
+    .infos-list .team-list > div {
+      width: calc((100% - (8*10px)) / 4);
+      background-color: #f5f5f5;
+      text-align: center;
+      margin: 10px; }
+      .infos-list .team-list > div .player_picture img {
+        width: 100%; }
+      .infos-list .team-list > div h4 {
+        font-size: 1em;
+        margin: 15px 0 7px; }
+  .infos-list .datas_team div + div {
+    margin-left: 5%; }
 
 /*# sourceMappingURL=app.css.map */
