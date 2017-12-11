@@ -60,6 +60,7 @@ class AdminController extends Controller
 
    public function StoreMatch(Request $request)
  {      
+ 
         $id = DB::table('matchs')->insertGetId(
         ['team_1' => $request->input('team_1'),
         'score_team_1' => "0",
@@ -70,6 +71,16 @@ class AdminController extends Controller
         'created_at' => NOW(),
         'updated_at' => NOW()]
 );
+
+        $newid = DB::table('matchs')->where('match_date', $request->input('match_date'))->first();
+
+         $bet = DB::table('bets')->insertGetId(
+           ['match_id' => $newid->id,
+           'cote_team_1' => $request->input('cote_team_1'),
+           'cote_team_2' => $request->input('cote_team_2'),
+           'end_time' => $request->input('match_date'),
+           ]);
+
         echo "The match has been created!";
   }
 
@@ -78,8 +89,6 @@ class AdminController extends Controller
  {
       $match = Match::find($id);
       $match->delete();
-      //dd($match);
-        //return view('admin/);
   }
 
   public function update_stats($id)
@@ -91,23 +100,14 @@ class AdminController extends Controller
   public function add_stats(Request $request, $id)
   {
 
-    //$id_matches = $id;
-    //echo '<pre>';
-    //dd($request);
-    //echo '</pre>';
-    //exit();
     $nb = $request->input('nb_points_team1')+ $request->input('nb_points_team2');
-    //var_dump($id);
     $stats = \App\Stats_match::where('id_matches', $id)->first();
-    // var_dump($stats);
-    // die;
     $stats->nb_points = $nb;
     $stats->nb_rebounds = $request->input('nb_rebounds');
     $stats->nb_assists = $request->input('nb_assists');
     $stats->nb_faults = $request->input('nb_faults');
     $stats->nb_supporter = $request->input('nb_supporters');
     $stats->match_duration = $request->input('match_duration');
-    //dd($stats);
     $stats->save();
 
   $match = \App\Match::find($id);

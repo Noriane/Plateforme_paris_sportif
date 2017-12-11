@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
     	
     	for ($i = 0; $i<5; $i++)
     	{
-    		/*
+    		
 
     		//Generate Players
 	        DB::table('players')->insert([
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
 	            'playground'=>rand(1, 5),
 	            'country' => $faker->numberBetween(1,10),
 	        ]);
-	        */
+	        
     	}
 
     	$players = Player::all();
