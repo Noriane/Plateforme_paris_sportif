@@ -15,9 +15,20 @@ class Match extends Model
 	{
 	    return $this->hasOne('App\Team', 'id','team_2');
 	}
+
+	public function playground1()
+	{
+	    return $this->hasOne('App\Playground', 'id','playground');
+	}
+
 	public function teams()
 	{
 		return $this->with("team1")->get()->combine($this->with("team2")->get());
+	}
+
+	public function index()
+	{
+
 	}
 }
  

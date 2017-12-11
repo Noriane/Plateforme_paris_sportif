@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
     	
     	for ($i = 0; $i<5; $i++)
     	{
-    		/*
+    		
 
     		//Generate Players
 	        DB::table('players')->insert([
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
 	            //'email' => str_random(10).'@gmail.com',
 	            //'password' => bcrypt('secret'),
 	        ]);
-			*/
+			
 
 	        //Generate Match
 	        DB::table('matchs')->insert([
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
 	            'playground' => 1,
 	        ]);
 
-	        /*
+	        
 	        //Generate Playground
 	        DB::table('playgrounds')->insert([
 	            'playground_name' => $faker->name,
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
 	            'playground_picture' => $faker->avatar,
 	            'nb_supporter_max' => rand(40000, 80000),
 	        ]);
-	        */
+	        
 
     	}
 
