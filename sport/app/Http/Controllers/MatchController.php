@@ -37,4 +37,5 @@ class MatchController extends Controller
     	//dd($match);
         return view('match_stats', ['match'=>$match, 'page'=>$page]);
     }
+
 }
