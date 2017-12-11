@@ -38,6 +38,10 @@ Route::delete('/Match/delete/{id}', 'AdminController@delete_match')->name('admin
 
 Route::get('/Matchs/add_stats/{id}', 'AdminController@update_stats');
 Route::post('/Matchs/add_stats/{id}', 'AdminController@add_stats')->name('add_stats');
+
+Route::get('/teams', 'AdminController@teams');
+Route::get('Team/Add', 'AdminController@create_team');
+Route::get('Team/Add', 'AdminController@store_team');
 });
 //END OF ADMIN
 

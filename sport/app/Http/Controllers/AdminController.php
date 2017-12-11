@@ -119,8 +119,25 @@ class AdminController extends Controller
   //ENDOFMATCH
 
   //TEAMS
-  public function teams()
+  public function teams($id = null)
   {
 
+    $teams = Team::get();
+
+        //$now = Carbon::now();
+        return view('admin.teams', ['teams'=>$teams]);
+    }
+
+  public function create_team()
+  {
+    $countries = Country::pluck("country_name", "id");
+    return view('admin.createteam', compact('countries'));
+
   }
+
+  public function store_team()
+  {
+    
+  }
+      //
 }
