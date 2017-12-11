@@ -11,6 +11,11 @@ class BetsUsers extends Model
 		'updated_at'
 	];
 
+	public function bets()
+	{
+	    return $this->belongsTo('App\Bet', 'bet_id');
+	}
+
 	public function match()
 	{
 	    return $this->belongsTo('App\Match', 'match_id');

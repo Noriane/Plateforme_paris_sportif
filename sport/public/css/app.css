@@ -11,7 +11,7 @@
 .main-content {
   display: flex;
   background-color: white; }
-  .main-content.match, .main-content.bets {
+  .main-content.match, .main-content.bets, .main-content.mybets {
     background-color: #efefef; }
   .main-content nav .nav-item a {
     color: white; }
