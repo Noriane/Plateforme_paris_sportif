@@ -25,42 +25,49 @@
                 $passed = false;
                 $coming = false;
             @endphp
-            
-            {{--
-	    	@foreach ($bets as $bet)
-                @if ($bet->end_time->lt($date_now) && $passed == false)
+
+	    	@foreach ($bet_user as $bet)
+
+                @if ($bet->bets->end_time->lt($date_now) && $passed == false)
                     @php ($passed = true)
                     <tr class="separator"><td colspan="8">Passed matches</td></tr>
-                @elseif ($bet->end_time->gt($date_now) && $coming == false)
+                @elseif ($bet->bets->end_time->gt($date_now) && $coming == false)
                     @php ($coming = true)
                     <tr class="separator"><td colspan="8">Upcoming matches</td></tr>
                 @endif
-                
                 <tr class="date">
                     <td colspan="11" rowspan="" headers="">{{$bet->match['match_date']}}</td>
                 </tr>
 
                 <tr class="">
                     <td></td>
-                    @if ($bet->end_time->gt($date_now))
-                    <td><a href="" class="btn btn-primary">Bet now</a></td>
-                    @endif
-                    <td class="cote team1"><div>{{$bet->cote_team_1}}</div></td>
-                    <td class="name team1">{{$bet->team1->team_name}}</td>
-                    <td><img src="{{$bet->team1->team_logo}}"></td>
-                    <td></td>
+                    <td class="cote team1"><div>{{$bet->bets->cote_team_1}}</div></td>
+                    <td class="name team1">{{$bet->bets->match->team1->team_name}}</td>
+                    <td><img src="{{$bet->bets->match->team1->team_logo}}"></td>
+                    <td>{{$bet->bets->match->score_team_1}}</td>
                     <td> | </td>
-                    <td></td>
-                    <td><img src="{{$bet->team2->team_logo}}"></td>
-                    <td class="name team2">{{$bet->team2->team_name}}</td>
-                    <td class="cote team2"><div>{{$bet->cote_team_2}}</div></td>
-                    @if ($bet->end_time->gt($date_now))
-                    <td><a href="" class="btn btn-primary">Bet now</a></td>
+                     <td>{{$bet->bets->match->score_team_2}}</td>
+                    <td><img src="{{$bet->bets->match->team2->team_logo}}"></td>
+                    <td class="name team2">{{$bet->bets->match->team2->team_name}}</td>
+                    <td class="cote team2"><div>{{$bet->bets->cote_team_2}}</div></td>
+
+                    @if ($bet->bets->end_time->lt($date_now))
+                        @if ($bet->bets->match->score_team_1 > $bet->bets->match->score_team_2)
+                            @php ($winner = $bet->bets->match->team_1)
+                        @else
+                            @php ($winner = $bet->bets->match->team_2)
+                        @endif
+                        @if ($bet->team_bet_id == $winner)
+                        <td>You win !</td>
+                        @else
+                        <td>You loose :(</td>
+                        @endif
+                    @else
                     <td></td>
                     @endif
-                </tr>
-	   		@endforeach
-            --}}
+                </tr>   
+      
+            @endforeach
    		</tbody>
     </table>
 </div>

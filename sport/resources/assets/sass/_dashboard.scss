@@ -19,7 +19,7 @@ $grey_light:#efefef;
 {
 	display:flex;
 	background-color:white;
-	&.match, &.bets
+	&.match, &.bets, &.mybets
 	{
 		background-color:$grey_light;
 	}
