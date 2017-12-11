@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
 	            //'email' => str_random(10).'@gmail.com',
 	            //'password' => bcrypt('secret'),
 	        ]);
-			
+
 
 	        //Generate Match
 	        DB::table('matchs')->insert([
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
 	            'playground' => 1,
 	        ]);
 
-	        
+
 	        //Generate Playground
 	        DB::table('playgrounds')->insert([
 	            'playground_name' => $faker->name,
@@ -66,6 +66,20 @@ class DatabaseSeeder extends Seeder
 	        ]);
 	        
 
+	        //Generate Stats Match
+	        DB::table('stats_matchs')->insert([
+	            'id_matches' => rand(1, 5),
+	            'id_matches'=>rand(1, 5),
+	            'nb_points'=>rand(1, 200),
+	            'nb_rebounds'=>rand(1, 120),
+	            'nb_assists'=>rand(1, 120),
+
+	            'nb_faults'=>rand(1, 10),
+	            'nb_supporter'=>rand(1, 60000),
+	            'match_duration'=>rand(1, 3000),
+	            'playground'=>rand(1, 5),
+	            'country' => $faker->numberBetween(1,10),
+	        ]);
     	}
 
     	$players = Player::all();

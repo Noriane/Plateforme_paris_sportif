@@ -10,11 +10,19 @@ $grey_light:#efefef;
 		max-width: inherit;
 	}
 }
+.flex
+{
+	display:flex;
+}
 
 .main-content
 {
 	display:flex;
-	background-color:$grey_light;
+	background-color:white;
+	&.match 
+	{
+		background-color:$grey_light;
+	}
 	nav
 	{
 		.nav-item a 
@@ -26,7 +34,11 @@ $grey_light:#efefef;
 	{
 		h1 
 		{
-			font-size: 1.3rem;
+			text-align: left;
+			margin: 22px 0;
+			border-bottom: 1px solid gainsboro;
+			padding: 0 10px 12px;
+			font-size: 1em;
 		}
 	}
 	.table-responsive
@@ -41,8 +53,12 @@ $grey_light:#efefef;
     		margin: 0 auto;
 			tr 
 			{
-				background-color: white;
 				margin:4px;
+    			background-color: $grey_light;
+    			&[class^="win_"]
+    			{
+    				background-color: white;	
+    			}
 				&.win_team_1
 				{
 					.score.team_1
@@ -59,6 +75,11 @@ $grey_light:#efefef;
 						font-size:1.5em;
 					}
 				}
+				.data
+				{
+					flex: 1;
+    				text-align: right;
+				}
 			}
 			img 
 			{
@@ -71,13 +92,28 @@ $grey_light:#efefef;
 			}
 			.team2-name
 			{
-			    width: 335px;
     			text-align: left;
 			}
 			.score
 			{
 				width:60px;
 				text-align: center;
+			}
+			.stats
+			{
+				flex:1;
+				text-align: right;
+			}
+			.separator
+			{
+			    margin-top: 30px;
+			    font-size: 0.8em;
+			    text-transform: uppercase;
+			    font-weight: bold;
+			}
+			.date
+			{
+				font-size: 0.8em;
 			}
 		}
 		td.picture
@@ -126,6 +162,67 @@ $grey_light:#efefef;
     			text-align: right;
     		}
 		}
+		&.stats_match
+		{
+		    background-color: $grey_light;
+			table.list-match 
+			{
+				tr 
+				{
+					background-color:white;
+				}
+			}
+			div.flex 
+			{
+		        background-color: #ffffff;
+			    padding: 50px;
+			    width: 66.4%;
+    			margin: 30px auto;
+				min-width:800px;
+				align-items: center;
+				justify-content: space-around;
+				font-size:2em;
+				.logo_team
+				{
+					width: 40%;
+					img 
+					{
+						display:block;
+						margin: 0 auto;
+						width:50%;
+					}
+					
+				}
+				&.win_team_1
+				{
+
+					.team1
+					{
+						font-weight:bold;
+						font-size:1.5em;
+					}
+				}
+				&.win_team_2
+				{
+					.team2
+					{
+						font-weight:bold;
+						font-size:1.5em;
+					}
+				}
+			}
+			.playground
+			{
+			    width: 67%;
+    			margin: 0 auto;
+    			img 
+    			{
+    				width:70%;
+    				display: block;
+    				margin:20px auto;
+    			}
+			}
+		}
 	}
 }
 .infos-list
@@ -142,10 +239,14 @@ $grey_light:#efefef;
 	    background-color: #f2f2f2;
 	    >img
 	    {
-	    	width:50%;
+    	    width: 30%;
+	    	&.smaller
+	    	{
+	    		width:24%;
+	    	}
 	    	&.logo
 	    	{
-    		    background-color: $grey;
+    		    //background-color: $grey;
 	    	}
 	    	&.profile
 	    	{
@@ -154,5 +255,39 @@ $grey_light:#efefef;
 			    margin-top: auto;
 	    	}
 	    }
+    }
+    h3 
+    {
+    	text-align: center;
+	    margin: 24px 0;
+	    font-weight: 600;
+    }
+    .team-list
+    {
+    	display: flex;
+    	flex-wrap: wrap;
+    	>div 
+    	{
+    		width:calc((100% - (8*10px)) / 4);
+    		background-color:#f5f5f5;
+    		text-align: center;
+    		margin:10px;
+    		.player_picture img 
+    		{
+    			width:100%;
+    		}
+    		h4 
+    		{
+    			font-size: 1em;
+    			margin: 15px 0 7px;
+    		}
+    	}
+    }
+    .datas_team
+    {
+    	div + div
+    	{
+    		margin-left:5%;
+    	}
     }
 }

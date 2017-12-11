@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Match;
+use Carbon\Carbon;
 
 class MatchController extends Controller
 {
@@ -24,11 +25,16 @@ class MatchController extends Controller
      */
     public function index($id = NULL)
     {
-		$matches = Match::with("team1","team2")->get();
-		
-		
-		
+		$matches = Match::with("team1","team2")->orderBy("match_date","DESC")->get();
+		$now = Carbon::now();
+        return view('match', ['matches'=>$matches, 'date_now'=>$now]);
+    }
 
-        return view('match', ['matches'=>$matches]);
+    public function displayStats($id)
+    {
+    	$match = Match::with("team1","team2")->with("stats_match")->with("playground_used.country_playground")->find($id);
+    	$page = "match";
+    	//dd($match);
+        return view('match_stats', ['match'=>$match, 'page'=>$page]);
     }
 }

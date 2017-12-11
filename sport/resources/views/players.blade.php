@@ -50,7 +50,7 @@
     	<h3>{{$current_player->player_name}}</h3>
     	<p>Taille : {{$current_player->height}} m</p>
     	<p>Poids : {{$current_player->weight}} kg</p>
-    	<p>Equipe : {{$current_player->team->team_name}}</p>
+    	<p>Equipe : <a href="/teams/{{$current_player->team->id}}">{{$current_player->team->team_name}}</a></p>
     	<p>Date de naissance : {{$current_player->birthdate}}</p>
     	<p>Nombre de match joué : {{$current_player->stats->nb_match}}</p>
     	<p>Nombre de points marqués : {{$current_player->stats->nb_points}}</p>
