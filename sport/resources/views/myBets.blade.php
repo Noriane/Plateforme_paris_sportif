@@ -25,8 +25,9 @@
                 $passed = false;
                 $coming = false;
             @endphp
+            
+            {{--
 	    	@foreach ($bets as $bet)
-
                 @if ($bet->end_time->lt($date_now) && $passed == false)
                     @php ($passed = true)
                     <tr class="separator"><td colspan="8">Passed matches</td></tr>
@@ -59,6 +60,7 @@
                     @endif
                 </tr>
 	   		@endforeach
+            --}}
    		</tbody>
     </table>
 </div>

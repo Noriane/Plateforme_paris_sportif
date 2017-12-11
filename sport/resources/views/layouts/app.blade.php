@@ -37,7 +37,7 @@
                                 <a class="nav-link" href="/bets">Space bets</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/bets">Bets</a>
+                                <a class="nav-link" href="/myBets">My Bets</a>
                             </li>
                         </ul>
                     </nav>

@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\MatchController' => $baseDir . '/app/Http/Controllers/MatchController.php',
     'App\\Http\\Controllers\\PlayerController' => $baseDir . '/app/Http/Controllers/PlayerController.php',
     'App\\Http\\Controllers\\TeamController' => $baseDir . '/app/Http/Controllers/TeamController.php',
+    'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\Locale' => $baseDir . '/app/Http/Middleware/Locale.php',

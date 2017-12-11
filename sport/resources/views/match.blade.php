@@ -23,7 +23,7 @@
 <div class="table-responsive">
     <table class="table table-striped list-match">
 	    <tbody>
-            @php 
+            @php
                 $passed = false;
                 $coming = false;
             @endphp

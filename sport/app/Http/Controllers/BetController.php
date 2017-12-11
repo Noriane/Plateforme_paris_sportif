@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Bet;
+use App\BetsUsers;
 use Carbon\Carbon;
 
 class BetController extends Controller
@@ -28,5 +30,15 @@ class BetController extends Controller
 		$bets = Bet::with("match")->with("team1","team2")->get();
 		$now = Carbon::now();
         return view('bets', ['bets'=>$bets, 'date_now'=>$now]);
+    }
+
+    public function displayUserBets()
+    {
+        $userId = Auth::id();
+
+        $bets = BetsUsers::where('user_id', $userId)->get();
+
+        $now = Carbon::now();
+        return view('myBets', ['bets'=>$bets, 'date_now'=>$now]);
     }
 }
