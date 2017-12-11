@@ -51,3 +51,7 @@ Route::get('teams/{id}', 'TeamController@index')->name('team_stats');
 
 Route::get('match', 'MatchController@index')->name('match');
 Route::get('match/{id}/stats', 'MatchController@displayStats')->name('match_stats');
+
+Route::get('bets', 'BetController@index')->name('bets');
+
+Route::get('myBets', 'BetController@displayUserBets')->name('mybets');

@@ -12,9 +12,9 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div id="app" class="main-content {{Request::is('match')? 'match' : ''}}">
+        <div id="app" class="main-content {{Request::is('match')? 'match' : ''}} {{Request::is('bets')? 'bets' : ''}}">
             <div class="container-fluid">
-                @if (in_array(Request::route()->getName(), ["match","match_stats"]))
+                @if (in_array(Request::route()->getName(), ["match","match_stats", "bets"]))
                 <div class="row large">
                 @else
                 <div class="row">
@@ -32,6 +32,12 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/match">Match</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/bets">Space bets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/myBets">My Bets</a>
                             </li>
                         </ul>
                     </nav>

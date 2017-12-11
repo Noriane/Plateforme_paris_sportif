@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Team;
+use Auth;
+use App\Bet;
+use App\BetsUsers;
 use Carbon\Carbon;
 
-class TeamController extends Controller
+class BetController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,15 +27,18 @@ class TeamController extends Controller
      */
     public function index($id = NULL)
     {
-		$teams = Team::with("stats")->with("country")->get();
-		if (isset($id))
-		{
-			$current_team = Team::with("stats")->with("country")->with("players")->find($id);
-		}else
-		{
-			$current_team = $teams->first();
-		}
+		$bets = Bet::with("match")->with("team1","team2")->get();
+		$now = Carbon::now();
+        return view('bets', ['bets'=>$bets, 'date_now'=>$now]);
+    }
+
+    public function displayUserBets()
+    {
+        $userId = Auth::id();
+
+        $bets = BetsUsers::where('user_id', $userId)->get();
+
         $now = Carbon::now();
-        return view('teams', ['teams'=>$teams, 'current_team'=>$current_team, 'date_now'=>$now]);
+        return view('myBets', ['bets'=>$bets, 'date_now'=>$now]);
     }
 }

@@ -11,7 +11,7 @@
 .main-content {
   display: flex;
   background-color: white; }
-  .main-content.match {
+  .main-content.match, .main-content.bets {
     background-color: #efefef; }
   .main-content nav .nav-item a {
     color: white; }
@@ -23,43 +23,71 @@
     font-size: 1em; }
   .main-content .table-responsive td {
     border-top: 0px solid #e9ecef; }
-  .main-content .table-responsive .list-match {
+  .main-content .table-responsive .list-match, .main-content .table-responsive .list-bets {
     width: 67%;
     margin: 0 auto; }
-    .main-content .table-responsive .list-match tr {
+    .main-content .table-responsive .list-match tr, .main-content .table-responsive .list-bets tr {
       margin: 4px;
       background-color: #efefef; }
-      .main-content .table-responsive .list-match tr[class^="win_"] {
+      .main-content .table-responsive .list-match tr[class^="win_"], .main-content .table-responsive .list-bets tr[class^="win_"] {
         background-color: white; }
-      .main-content .table-responsive .list-match tr.win_team_1 .score.team_1 {
+      .main-content .table-responsive .list-match tr.win_team_1 .score.team_1, .main-content .table-responsive .list-bets tr.win_team_1 .score.team_1 {
         font-weight: bold;
         font-size: 1.5em; }
-      .main-content .table-responsive .list-match tr.win_team_2 .score.team_2 {
+      .main-content .table-responsive .list-match tr.win_team_2 .score.team_2, .main-content .table-responsive .list-bets tr.win_team_2 .score.team_2 {
         font-weight: bold;
         font-size: 1.5em; }
-      .main-content .table-responsive .list-match tr .data {
+      .main-content .table-responsive .list-match tr .data, .main-content .table-responsive .list-bets tr .data {
         flex: 1;
         text-align: right; }
-    .main-content .table-responsive .list-match img {
+    .main-content .table-responsive .list-match img, .main-content .table-responsive .list-bets img {
       width: 60px; }
-    .main-content .table-responsive .list-match .team1-name {
+    .main-content .table-responsive .list-match .team1-name, .main-content .table-responsive .list-bets .team1-name {
       width: 335px;
       text-align: right; }
-    .main-content .table-responsive .list-match .team2-name {
+    .main-content .table-responsive .list-match .team2-name, .main-content .table-responsive .list-bets .team2-name {
       text-align: left; }
-    .main-content .table-responsive .list-match .score {
+    .main-content .table-responsive .list-match .score, .main-content .table-responsive .list-bets .score {
       width: 60px;
       text-align: center; }
-    .main-content .table-responsive .list-match .stats {
+    .main-content .table-responsive .list-match .stats, .main-content .table-responsive .list-bets .stats {
       flex: 1;
       text-align: right; }
-    .main-content .table-responsive .list-match .separator {
+    .main-content .table-responsive .list-match .separator, .main-content .table-responsive .list-bets .separator {
       margin-top: 30px;
       font-size: 0.8em;
       text-transform: uppercase;
       font-weight: bold; }
-    .main-content .table-responsive .list-match .date {
+      .main-content .table-responsive .list-match .separator td, .main-content .table-responsive .list-bets .separator td {
+        margin-left: auto;
+        margin-right: auto; }
+    .main-content .table-responsive .list-match .date, .main-content .table-responsive .list-bets .date {
       font-size: 0.8em; }
+  .main-content .table-responsive .list-bets {
+    margin-bottom: 50px; }
+    .main-content .table-responsive .list-bets tr {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .main-content .table-responsive .list-bets tr:not(.date):not(.separator) {
+        background-color: white; }
+      .main-content .table-responsive .list-bets tr td.team1, .main-content .table-responsive .list-bets tr td.team2 {
+        flex: 1; }
+      .main-content .table-responsive .list-bets tr td.team1 {
+        text-align: right; }
+      .main-content .table-responsive .list-bets tr td.cote > div {
+        padding: 7px;
+        background-color: #dedfe0;
+        margin-left: auto;
+        display: inline-block;
+        width: 54px;
+        text-align: center;
+        border-radius: 3px; }
+      .main-content .table-responsive .list-bets tr.date > td {
+        margin-right: auto; }
+      .main-content .table-responsive .list-bets tr td a {
+        display: block;
+        margin: 0 auto; }
   .main-content .table-responsive td.picture {
     padding: 0; }
     .main-content .table-responsive td.picture:first-of-type {

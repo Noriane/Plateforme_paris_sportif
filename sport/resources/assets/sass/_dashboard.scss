@@ -19,7 +19,7 @@ $grey_light:#efefef;
 {
 	display:flex;
 	background-color:white;
-	&.match 
+	&.match, &.bets
 	{
 		background-color:$grey_light;
 	}
@@ -47,7 +47,7 @@ $grey_light:#efefef;
 		{
 			border-top: 0px solid #e9ecef;
 		}
-		.list-match
+		.list-match, .list-bets
 		{
 		    width: 67%;
     		margin: 0 auto;
@@ -110,10 +110,62 @@ $grey_light:#efefef;
 			    font-size: 0.8em;
 			    text-transform: uppercase;
 			    font-weight: bold;
+			    td 
+			    {
+			    	margin-left:auto;
+			    	margin-right:auto;
+			    }
 			}
 			.date
 			{
 				font-size: 0.8em;
+			}
+		}
+		.list-bets
+		{
+			margin-bottom:50px;
+			tr 
+			{
+				display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    &:not(.date):not(.separator)
+			    {
+			    	background-color:white;
+			    }
+			    td.team1, td.team2
+			    {
+			    	flex:1;
+			    }
+			    td.team1
+			    {
+			    	text-align:right;
+			    }
+			    td.cote
+			    {
+			    	>div 
+			    	{
+			    	    padding: 7px;
+					    background-color: #dedfe0;
+					    margin-left: auto;
+					    display: inline-block;
+					    width: 54px;
+					    text-align: center;
+					    border-radius: 3px;
+			    	}
+			    }
+			    &.date 
+			    {
+			    	>td
+			    	{
+			    		margin-right: auto;
+			    	}
+			    }
+			    td a 
+			    {
+		    	    display: block;
+    				margin: 0 auto;
+			    }
 			}
 		}
 		td.picture
