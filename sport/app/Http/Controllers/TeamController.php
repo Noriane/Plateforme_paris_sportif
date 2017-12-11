@@ -33,6 +33,7 @@ class TeamController extends Controller
 		{
 			$current_team = $teams->first();
 		}
+        dd($teams);
        $now = Carbon::now();
         return view('teams', ['teams'=>$teams, 'current_team'=>$current_team, 'date_now'=>$now]);
     }

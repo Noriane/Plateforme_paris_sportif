@@ -326,6 +326,7 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
 
     public static $classMap = array (
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
+        'App\\Bet' => __DIR__ . '/../..' . '/app/Bet.php',
         'App\\Console\\Commands\\loadCountries' => __DIR__ . '/../..' . '/app/Console/Commands/loadCountries.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
@@ -336,6 +337,7 @@ class ComposerStaticInit2798388c97ff7fa0695a4ed74c4a9d5c
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\BetController' => __DIR__ . '/../..' . '/app/Http/Controllers/BetController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CountryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CountryController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',

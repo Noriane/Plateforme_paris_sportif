@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Faker\Factory as Faker;
 use App\Player;
 use App\Team;
+use App\Bet;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +23,7 @@ class DatabaseSeeder extends Seeder
     	
     	for ($i = 0; $i<5; $i++)
     	{
-    		
+    		/*
 
     		//Generate Players
 	        DB::table('players')->insert([
@@ -80,6 +81,7 @@ class DatabaseSeeder extends Seeder
 	            'playground'=>rand(1, 5),
 	            'country' => $faker->numberBetween(1,10),
 	        ]);
+	        */
     	}
 
     	$players = Player::all();
@@ -116,6 +118,19 @@ class DatabaseSeeder extends Seeder
 	            'nb_played_time' => $faker->numberBetween(0,1000),
 	            'weight' => $faker->numberBetween(500,2000),
 	            'age_average' => $faker->numberBetween(20,40),
+	        ]);
+    	}
+
+    	$bets = Team::all();
+		DB::table('bets')->truncate();
+    	foreach ($bets as $bet)
+    	{
+	        DB::table('bets')->insert([
+	        	'match_id' => $faker->numberBetween(1,10),
+	        	'cote_team_1' => mt_rand(100,900)/100,
+	        	'cote_team_2' => mt_rand(100,900)/100,
+	        	'team_1' => rand(1,5),
+	        	'team_2' => rand(1,5),
 	        ]);
     	}
     }
