@@ -23,7 +23,6 @@
     <table class="table table-striped">
 	    <tbody>
 	    	@foreach ($teams as $team)
-            {{--<tr class="{{$current_team->id == $team->id ? 'active' : ''}}">--}}
 	    	<tr class="{{$current_team->id == $team->id ? 'active' : ''}}">
 	    		<td class="picture"><img src="{{$team->team_logo}}"></td>
 	    		<td class="name"><a href="{{ route('team_stats', ['id'=>$team->id]) }}">{{$team->team_name}}</a></td>

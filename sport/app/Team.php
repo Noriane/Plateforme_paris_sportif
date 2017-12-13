@@ -16,6 +16,6 @@ class Team extends Model
 	}
 	public function stats()
 	{
-	    
+	    return $this->hasOne('App\Stats_team', 'id_team');
 	}
 }
