@@ -40,8 +40,14 @@ Route::get('/Matchs/add_stats/{id}', 'AdminController@update_stats');
 Route::post('/Matchs/add_stats/{id}', 'AdminController@add_stats')->name('add_stats');
 
 Route::get('/teams', 'AdminController@teams');
+
 Route::get('Team/Add', 'AdminController@create_team');
-Route::get('Team/Add', 'AdminController@store_team');
+Route::post('Team/Add', 'AdminController@store_team');
+
+Route::get('/players', 'AdminController@players');
+
+Route::get('Player/Add', 'AdminController@create_player');
+Route::post('Player/Add', 'AdminController@store_player');
 });
 //END OF ADMIN
 

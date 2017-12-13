@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Match;
 use App\Team;
+use App\Player;
 use App\Playground;
 use App\Stats_match;
 use Carbon\Carbon;
@@ -130,14 +131,81 @@ class AdminController extends Controller
 
   public function create_team()
   {
-    $countries = Country::pluck("country_name", "id");
-    return view('admin.createteam', compact('countries'));
+    //$countries = Country::pluck("country_name", "id");
+    return view('admin.CreateTeam');//, compact('countries'));
 
   }
 
-  public function store_team()
+  public function store_team(Request $request)
   {
-    
+    $newteam = DB::table('teams')->insertGetId(
+    ['team_name'=>$request->input('team_name'),
+    'nb_players'=>$request->input('nb_players'),
+    'nb_matches'=>$request->input('nb_matches'),
+    'coach_name'=>$request->input('coach_name'),
+    'country_id'=>$request->input('country_id'),
+  ]);
+
+    $teamid = \App\Team::where('team_name', $request->input('team_name'))->first();
+
+    $teamstat = DB::table('stats_teams')->insertGetId(
+      ['id_team'=>$teamid,
+      'nb_win'=>$request->input('nb_win'),
+      'nb_loose'=>$request->input('nb_loose'),
+      'nb_played_match'=>$request->input('nb_matches'),
+      'nb_points'=>$request->input('nb_points'),
+      'nb_rebounds'=>$request->input('nb_rebounds'),
+      'nb_faults'=>$request->input('nb_faults'),
+      'nb_assists'=>$request->input('nb_assists'),
+      'nb_played_time'=>$request->input('nb_played_time'),
+      'weight'=>$request->input('weight'),
+      'age_average'=>$request->input('age_average'),
+
+      ]);
+
+  }    
+  //END OF TEAMS
+
+  //PLAYERS
+
+  public function players()
+  {
+    $players = Player::get();
+    return view('admin.players', ['players' => $players]);
   }
-      //
+
+  public function create_player()
+  {
+    //$countries = Country::pluck("country_name", "id");
+    return view('admin.CreatePlayer');//, compact('countries'));
+
+  }
+
+  public function store_player(Request $request)
+  {
+    $newplayer = DB::table('players')->insertGetId(
+    ['player_name'=>$request->input('player_name'),
+    'birthdate'=>$request->input('birthdate'),
+    'height'=>$request->input('height'),
+    'weight'=>$request->input('weight'),
+    //'team_id'=>$request->input('team_id'),
+    'team_id'=>3,
+  ]);
+
+    $playerid = \App\Player::where('player_name', $request->input('player_name'))->first();
+
+    $teamstat = DB::table('stats_players')->insertGetId(
+      ['id_player'=>$playerid->id,
+      'id_match'=>4,
+      'nb_match'=>$request->input('nb_match'),
+      'nb_points'=>$request->input('nb_points'),
+      'nb_faults'=>$request->input('nb_faults'),
+      'nb_rebounds'=>$request->input('nb_rebounds'),
+      'nb_assists'=>$request->input('nb_assists'),
+      'ban'=>$request->input('ban'),
+      'game_time'=>$request->input('game_time'),
+      'no_game_time'=>$request->input('no_game_time'),
+      ]);
+
+}
 }
