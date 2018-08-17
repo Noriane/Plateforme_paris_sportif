@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEQ,0EAAkE;ACF1E,MACA;EACC,gBAAgB,EAAC,IAAI",
-"sources": ["../../sport/resources/assets/sass/app.scss","../../sport/resources/assets/sass/components/_header.scss"],
-"names": [],
-"file": "app.css"
-}
